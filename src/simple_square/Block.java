@@ -100,5 +100,9 @@ public class Block implements Cloneable{
 			return 0;
 		return Math.sqrt(Math.pow(position.x - targetPosition.x, 2) + Math.pow(position.y - targetPosition.y, 2));
 	}
+	
+	public Block simulateMove(){
+		return new Block(this.position.move(this.direction), this.direction,this.targetPosition);
+	}
 
 }

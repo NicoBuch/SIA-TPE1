@@ -189,11 +189,16 @@ public class SimpleSquaresProblem implements GPSProblem {
 
 	public static Integer getHValue(GPSNode node) {
 		GPSState state = node.getState();
-		Integer totalDistance = 0;
+		Integer value = 0;
 		for (Block b : state.getBlocks()) {
 			if (heuristic.equals(Heuristic.MinDistance)) {
-				totalDistance += (int) b.getDistanceToObjective();
-			} else if(heuristic.equals(Heuristic.DEFAULT)) {
+				value += (int) b.getDistanceToObjective();
+			}else if(heuristic.equals(Heuristic.Parent)) {
+				Block movedBlock = node.getState().getMove(node.getParent().getState());
+				if(movedBlock.getDistanceToObjective() > movedBlock.simulateMove().getDistanceToObjective()){
+					return 0;
+				}
+			}else if(heuristic.equals(Heuristic.DEFAULT)) {
 
 				if (b.getPosition().isAtLeftFrom(INITIAL_POSITION)
 						&& b.getDirection().equals(Direction.LEFT)) {
@@ -214,7 +219,7 @@ public class SimpleSquaresProblem implements GPSProblem {
 			}
 
 		}
-		return totalDistance;
+		return value;
 	}
 
 	public static SearchStrategy getStrategy() {

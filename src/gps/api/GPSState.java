@@ -29,4 +29,6 @@ public interface GPSState {
 	
 	GPSState clone();
 	
+	Block getMove(GPSState state);
+	
 }

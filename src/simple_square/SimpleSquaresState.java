@@ -70,4 +70,15 @@ public class SimpleSquaresState implements GPSState {
 		return s;
 	}
 	
+	public Block getMove(GPSState state){
+		for(Block b1: state.getBlocks()){
+			for(Block b2: blocks){
+				if(b1.getTargetPosition().equals(b2.getTargetPosition()) && !b1.getPosition().equals(b2.getPosition())){
+					return b1;
+				}
+			}
+		}
+		return null;
+	}
+	
 }
