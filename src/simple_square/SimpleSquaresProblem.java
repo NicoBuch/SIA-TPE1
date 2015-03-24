@@ -1,5 +1,6 @@
 package simple_square;
 
+import gps.GPSNode;
 import gps.Heuristic;
 import gps.SearchStrategy;
 import gps.api.GPSProblem;
@@ -186,7 +187,8 @@ public class SimpleSquaresProblem implements GPSProblem {
 		return rules;
 	}
 
-	public static Integer getHValue(GPSState state) {
+	public static Integer getHValue(GPSNode node) {
+		GPSState state = node.getState();
 		Integer totalDistance = 0;
 		for (Block b : state.getBlocks()) {
 			if (heuristic.equals(Heuristic.MinDistance)) {

@@ -48,9 +48,9 @@ public class GPSNode implements Comparable<GPSNode>{
 	@Override
 	public int compareTo(GPSNode o) {
 		if(SimpleSquaresProblem.getStrategy().equals(SearchStrategy.AStar)){
-			return (SimpleSquaresProblem.getHValue(this.state) + cost ) - (SimpleSquaresProblem.getHValue(o.state) + o.cost);
+			return (SimpleSquaresProblem.getHValue(this) + cost ) - (SimpleSquaresProblem.getHValue(o) + o.cost);
 		}else{
-			return SimpleSquaresProblem.getHValue(this.state) - SimpleSquaresProblem.getHValue(o.state);
+			return SimpleSquaresProblem.getHValue(this) - SimpleSquaresProblem.getHValue(o);
 		}
 	}
 }
