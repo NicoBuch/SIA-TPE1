@@ -40,7 +40,7 @@ public class SimpleSquaresRule implements GPSRule {
 			}
 			current = next;
 		}
-		System.out.println((from.getX()) + ", " + (from.getY()));
+//		System.out.println((from.getX()) + ", " + (from.getY()));
 		return newState;		
 	}
 	

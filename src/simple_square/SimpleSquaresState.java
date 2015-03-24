@@ -67,9 +67,9 @@ public class SimpleSquaresState implements GPSState {
 	@Override
 	public String toString() {
 		String s = "" + '\n';
-		s += "En este estado los bloques son:";
+		s += "En este estado los bloques son: "+ '\n';
 		for(Block b : blocks){
-			s += "posicion: " + b.getPosition().x + ", " + b.getPosition().y + "direccion: " + b.getDirection() + '\n';
+			s += "posicion: " + b.getPosition().x + ", " + b.getPosition().y + " direccion: " + b.getDirection() + '\n';
 		}
 		return s;
 	}

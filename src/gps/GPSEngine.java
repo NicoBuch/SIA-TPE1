@@ -23,7 +23,6 @@ public abstract class GPSEngine {
 	protected SearchStrategy strategy;
 
 	public void engine(GPSProblem myProblem, SearchStrategy myStrategy) {
-
 		problem = myProblem;
 		strategy = myStrategy;
 
@@ -37,13 +36,13 @@ public abstract class GPSEngine {
 			if (open.size() <= 0) {
 				if(strategy.equals(SearchStrategy.DeepIteration)){
 					deepIterationValue ++;
-					System.out.println("new deepIterationValue: " + deepIterationValue);
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+//					System.out.println("new deepIterationValue: " + deepIterationValue);
+//					try {
+//						Thread.sleep(2000);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
 					open.add(rootNode);
 				}
 				else{
@@ -63,7 +62,7 @@ public abstract class GPSEngine {
 				}
 			}
 		}
-
+		
 		if (finished) {
 			System.out.println("OK! solution found!");
 		} else if (failed) {
