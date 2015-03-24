@@ -1,5 +1,6 @@
 package simple_square;
 
+import gps.GPSNode;
 import gps.Heuristic;
 import gps.SearchStrategy;
 import gps.api.GPSProblem;
