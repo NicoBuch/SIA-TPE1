@@ -98,7 +98,8 @@ public class Block implements Cloneable{
 	public double getDistanceToObjective() {
 		if (targetPosition == null)
 			return 0;
-		return Math.sqrt(Math.pow(position.x - targetPosition.x, 2) + Math.pow(position.y - targetPosition.y, 2));
+//		return Math.sqrt(Math.pow(position.x - targetPosition.x, 2) + Math.pow(position.y - targetPosition.y, 2));
+		return Math.abs(position.x - targetPosition.x) + Math.abs(position.y - targetPosition.y);
 	}
 	
 	public int getManhattanDistanceToObjective() {
