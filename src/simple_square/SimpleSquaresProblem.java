@@ -19,7 +19,7 @@ public class SimpleSquaresProblem implements GPSProblem {
 	public static final Position INITIAL_POSITION = new Position(2, 2);
 	public static final Integer HEURISTIC_MAX = Integer.MAX_VALUE;
 	public static Position max_position;
-	public static SearchStrategy strategy;
+	private static SearchStrategy strategy;
 	private static String filepath;
 	private static Heuristic heuristic;
 

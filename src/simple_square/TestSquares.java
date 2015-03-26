@@ -23,7 +23,7 @@ public class TestSquares {
 			else if(heur.toString().equals("inpath")){
 				heuristic = Heuristic.InPath;
 				System.out.println("In Path");
-			}else if(heur.toString().equals("manDist")){
+			}else if(heur.toString().equals("mandist")){
 				heuristic = Heuristic.OneDistance;
 				System.out.println("One Man Distance");
 			}
