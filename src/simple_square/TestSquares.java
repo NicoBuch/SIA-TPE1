@@ -23,6 +23,9 @@ public class TestSquares {
 			else if(heur.toString().equals("inpath")){
 				heuristic = Heuristic.InPath;
 				System.out.println("In Path");
+			}else if(heur.toString().equals("manDist")){
+				heuristic = Heuristic.OneDistance;
+				System.out.println("One Man Distance");
 			}
 			else if(heur.toString().equals("admisiblemindistance")){
 				heuristic = Heuristic.AdmisibleMinDistance;

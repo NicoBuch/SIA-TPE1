@@ -4,5 +4,5 @@ public enum Heuristic {
 	DEFAULT,
 	MinDistance,
 	InPath,
-	AdmisibleMinDistance
+	AdmisibleMinDistance,
 }

@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SimpleSquaresProblem implements GPSProblem {
@@ -123,6 +124,7 @@ public class SimpleSquaresProblem implements GPSProblem {
 
 	public static Integer getHValue(GPSState state) {
 		Integer value = 0;
+		List<Double> manDistList = new ArrayList<Double>();
 		for (Block b : state.getBlocks()) {
 			if (b.getPosition().isAtLeftFrom(INITIAL_POSITION)
 					&& !b.getDirection().equals(Direction.RIGHT)) {
@@ -145,6 +147,8 @@ public class SimpleSquaresProblem implements GPSProblem {
 			} else if(heuristic.equals(Heuristic.InPath)) {
 				SimpleSquaresState aux = (SimpleSquaresState) state;
 				value += aux.isInPath(b);
+			} else if(heuristic.equals(Heuristic.OneDistance)){
+				manDistList.add(b.getDistanceToObjective());
 			}
 			else if(heuristic.equals(Heuristic.AdmisibleMinDistance)){
 				int currentValue = b.getManhattanDistanceToObjective();
@@ -159,6 +163,9 @@ public class SimpleSquaresProblem implements GPSProblem {
 				}
 			}
 
+		}
+		if(heuristic.equals(Heuristic.OneDistance)){
+			value = Collections.min(manDistList).intValue();
 		}
 		return value;
 	}
