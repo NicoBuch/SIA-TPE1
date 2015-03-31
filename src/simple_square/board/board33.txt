@@ -1,0 +1,8 @@
+max,6,6
+block,2,3,down,3,2
+block,4,2,right,2,4
+block,3,6,down,null,null
+arrow,2,3,down
+arrow,4,2,right
+arrow,5,6,left
+arrow,6,3,up
